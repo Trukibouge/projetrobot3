@@ -56,10 +56,10 @@
 #define AVANCE 	GPIO_PIN_SET
 #define RECULE  GPIO_PIN_RESET
 #define POURCENT 640
-#define Seuil_Dist_4 1600 // corespond à 10 cm.
-#define Seuil_Dist_3 1600
-#define Seuil_Dist_1 1600
-#define Seuil_Dist_2 1600
+#define Seuil_Dist_4 1023 // 10 cm: 1600
+#define Seuil_Dist_3 62303
+#define Seuil_Dist_1 1124
+#define Seuil_Dist_2 1244
 #define V1 38
 #define V2 56
 #define V3 76
