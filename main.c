@@ -148,6 +148,7 @@ int main(void)
 
   /* USER CODE BEGIN Init */
   Dist_Obst = 0;
+
   /* USER CODE END Init */
 
   /* Configure the system clock */
@@ -179,6 +180,7 @@ int main(void)
   	HAL_TIM_Encoder_Start(&htim3, TIM_CHANNEL_ALL);
   	HAL_TIM_Encoder_Start(&htim4, TIM_CHANNEL_ALL);
   	HAL_UART_Receive_IT(&huart3, &BLUE_RX, 1);
+  	HAL_ADC_Start_IT(&hadc1); //Start IT ADC
 
   /* USER CODE END 2 */
 
@@ -1129,6 +1131,10 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin) {
 	TOGGLE = ~TOGGLE;
 	New_CMDE = 1;
 
+}
+
+void HAL_ADC_LevelOutOfWindowCallback(ADC_HandleTypeDef* hadc){
+  HAL_GPIO_WritePin(GPIOA, LD2_Pin, GPIO_PIN_SET);
 }
 /* USER CODE END 4 */
 
